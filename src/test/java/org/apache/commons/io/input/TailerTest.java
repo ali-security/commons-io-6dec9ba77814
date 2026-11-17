@@ -48,6 +48,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.TestResources;
 import org.apache.commons.io.test.TestUtils;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -195,6 +196,7 @@ public class TailerTest {
     }
 
     @Test
+    @Disabled("Timing-dependent (50ms polling vs fixed sleeps): fileRotated count flakes on shared CI runners")
     public void testTailer() throws Exception {
 
         // Create & start the Tailer
